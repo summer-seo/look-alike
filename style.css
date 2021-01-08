@@ -1,0 +1,154 @@
+body {
+   /* font-family: sans-serif; */
+ font-family: 'Jua', sans-serif;	
+  /* background-color: #eeeeee; */
+  background-color: #ffffff;
+}
+
+.title {
+	font-weight: bold;
+	font-size: 25px;
+	text-align: center;
+}
+
+.file-upload {
+  background-color: #fce2a9;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 80%;
+  border-radius: 25px;
+  margin-top: 5%;
+}
+
+.mg-top-5{
+	margin-top: 5%;
+}
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 50%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  border: 1px dashed #757373;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #d1d1d1;
+  border: 4px dashed #ffffff;
+}
+
+.drag-text {
+  text-align: center;
+  font-weight: 50;
+  text-transform: uppercase;
+  color: #757373;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 70%;
+  max-width: 70%;
+  margin: auto;
+}
+.share-buttons{
+  margin-top:3%
+}
+
+.upload-image{
+  max-height: 50%;
+  max-width: 50%;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 3%;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.pd-3{
+	padding: 3%
+}
+
+.result-name{
+	font-size: 25px;
+	text-align: center;
+	margin-top: 3%;
+}
+
+.result-message{
+	
+	font-size: 20px;
+	text-align: center;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.main-image{
+	width: 70%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ad-banner {
+  width: 320px;
+  margin: 0 auto;
+}
+
+.progress{
+  background-color: transparent;
+  margin-bottom: 3%;
+  height: 1.5rem;
+}
+
+.name{
+   width: 20%;
+   font-size: 1rem;
+}
+
+.progressbar-total{
+    display:block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%
+}
+
+.align-center{
+	text-align: center;
+}
