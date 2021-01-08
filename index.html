@@ -24,7 +24,7 @@
 		/>
 		<!-- font -->
 		<link rel="preconnect" href="https://fonts.gstatic.com" />
-<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
 		<!-- Style Sheet -->
 		<link rel="stylesheet" href="style.css" />
 		<!-- Go to www.addthis.com/dashboard to customize your tools -->
@@ -66,57 +66,56 @@
 					<p>인공지능이 닮은 연예인을 분석중입니다</p>
 				</div>
 				<div class="progressbar-total">
-					
-				<div class="progress">
-					<div class="name" id="progressbar0-name"></div>
-					<div
-						class="progress-bar bg-success"
-						id = "progressbar0"
-						role="progressbar"
-						aria-valuemin="0"
-						aria-valuemax="100"
-					></div>
-				</div>
-				<div class="progress">
-					<div class="name" id="progressbar1-name"></div>
-					<div
-						class="progressbar2 progress-bar bg-info"
-						id = "progressbar1"
-						role="progressbar"
-						aria-valuemin="0"
-						aria-valuemax="100"
-					></div>
-				</div>
-				<div class="progress">
-					<div class="name" id="progressbar2-name"></div>
-					<div
-						class="progressbar3 progress-bar bg-warning"
-						id = "progressbar2"
-						role="progressbar"
-						aria-valuemin="0"
-						aria-valuemax="100"
-					></div>
-				</div>
-				<div class="progress">
-					<div class="name" id="progressbar3-name"></div>
-					<div
-						class="progressbar4 progress-bar bg-danger"
-						id = "progressbar3"
-						role="progressbar"
-						aria-valuemin="0"
-						aria-valuemax="100"
-					></div>
-				</div>
-				<div class="progress">
-					<div class="name" id="progressbar4-name"></div>
-					<div
-						class="progressbar5 progress-bar bg-danger"
-						id = "progressbar4"
-						role="progressbar"
-						aria-valuemin="0"
-						aria-valuemax="100"
-					></div>
-				</div>
+					<div class="progress">
+						<div class="name" id="progressbar0-name"></div>
+						<div
+							class="progress-bar bg-success"
+							id="progressbar0"
+							role="progressbar"
+							aria-valuemin="0"
+							aria-valuemax="100"
+						></div>
+					</div>
+					<div class="progress">
+						<div class="name" id="progressbar1-name"></div>
+						<div
+							class="progressbar2 progress-bar bg-info"
+							id="progressbar1"
+							role="progressbar"
+							aria-valuemin="0"
+							aria-valuemax="100"
+						></div>
+					</div>
+					<div class="progress">
+						<div class="name" id="progressbar2-name"></div>
+						<div
+							class="progressbar3 progress-bar bg-warning"
+							id="progressbar2"
+							role="progressbar"
+							aria-valuemin="0"
+							aria-valuemax="100"
+						></div>
+					</div>
+					<div class="progress">
+						<div class="name" id="progressbar3-name"></div>
+						<div
+							class="progressbar4 progress-bar bg-danger"
+							id="progressbar3"
+							role="progressbar"
+							aria-valuemin="0"
+							aria-valuemax="100"
+						></div>
+					</div>
+					<div class="progress">
+						<div class="name" id="progressbar4-name"></div>
+						<div
+							class="progressbar5 progress-bar bg-danger"
+							id="progressbar4"
+							role="progressbar"
+							aria-valuemin="0"
+							aria-valuemax="100"
+						></div>
+					</div>
 				</div>
 
 				<div class="image-title-wrap">
@@ -131,12 +130,36 @@
 				<div class="addthis_inline_share_toolbox_x0rn share-buttons"></div>
 			</div>
 		</div>
-		<p class="align-center mg-top-5">업로드한 사진은 분석에만 이용되며 어디에도 저장되지 않습니다. <br>안심하고 귀여운 강아지 사진 올려주세요.☺</p>
+		<p class="align-center mg-top-5">
+			업로드한 사진은 분석에만 이용되며 어디에도 저장되지 않습니다. <br />안심하고 귀여운
+			강아지 사진 올려주세요.☺
+		</p>
+		<p class="align-center">
+			© Kaila Kim & Summer Seo 2020. All Rights Reserved.
+		</p>
+		<p class="align-center">
+			<a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">
+			제작 도움 by 조코딩 유투브 채널</a>
+		</p>
 		<div class="ad-banner">
 			<ins
 				class="kakao_ad_area"
 				style="display: none;"
 				data-ad-unit="DAN-OdaO0iNGBXbJrsjx"
+				data-ad-width="320"
+				data-ad-height="100"
+			></ins>
+			<script
+				type="text/javascript"
+				src="//t1.daumcdn.net/kas/static/ba.min.js"
+				async
+			></script>
+		</div>
+		<div class="ad-banner2">
+			<ins
+				class="kakao_ad_area"
+				style="display: none;"
+				data-ad-unit="DAN-9ptxRFrKCyvh17MA"
 				data-ad-width="320"
 				data-ad-height="100"
 			></ins>
@@ -219,7 +242,7 @@
 			 https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image */
 
 			// the link to your model provided by Teachable Machine export panel
-			const URL = "https://teachablemachine.withgoogle.com/models/8_-qRJUd2/";
+			const URL = 'https://teachablemachine.withgoogle.com/models/8_-qRJUd2/';
 
 			let model, webcam, maxPredictions;
 
@@ -244,80 +267,98 @@
 
 				const prediction = await model.predict(image, false);
 				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-				var resultName = "";
-				var resultMessage = "";
-				switch(prediction[0].className){
+				var resultName = '';
+				var resultMessage = '';
+				switch (prediction[0].className) {
 					case '강호동':
-						resultName = "강호동";
-						resultMessage = "포동포동 사랑스러운 강아지 <br> 정말 든든한 당신의 반려견!";
+						resultName = '강호동';
+						resultMessage =
+							'포동포동 사랑스러운 강아지 <br> 정말 든든한 당신의 반려견!';
 						break;
 					case '규현':
-						resultName = "규현";
-						resultMessage = "당신의 강아지는 땡그란 눈의 소유자 <br> 혹시 짖을때 감미로운 보컬을 뽐내지 않나요?"
+						resultName = '규현';
+						resultMessage =
+							'당신의 강아지는 땡그란 눈의 소유자 <br> 혹시 짖을때 감미로운 보컬을 뽐내지 않나요?';
 						break;
 					case '원빈':
-						resultName = "원빈";
-						resultMessage = "남신급 외모를 갖춘 강아지군요! <br> 혹시 원빈이 강아지로 환생한거 아닌지..?"
+						resultName = '원빈';
+						resultMessage =
+							'남신급 외모를 갖춘 강아지군요! <br> 혹시 원빈이 강아지로 환생한거 아닌지..?';
 						break;
 					case '박보검':
-						resultName = "박보검";
-						resultMessage = "보기만해도 훈훈해지는 강아지 <br> 어디든지 나가면 모두에게 인기폭팔!"
-				 		break;
+						resultName = '박보검';
+						resultMessage =
+							'보기만해도 훈훈해지는 강아지 <br> 어디든지 나가면 모두에게 인기폭팔!';
+						break;
 					case '백종원':
-						resultName = "백종원";
-						resultMessage = "기분좋은 미소의 소유자군요! <br>  백종원 닮은 강아지 참 쉽쥬~?"
+						resultName = '백종원';
+						resultMessage =
+							'기분좋은 미소의 소유자군요! <br>  백종원 닮은 강아지 참 쉽쥬~?';
 						break;
 					case '서장훈':
-						resultName = "서장훈";
-						resultMessage = "서장훈의 쳐진 눈을 닮았어요.  <br> 강아지계 대표 순둥상인 당신 강아지!"
+						resultName = '서장훈';
+						resultMessage =
+							'서장훈의 쳐진 눈을 닮았어요.  <br> 강아지계 대표 순둥상인 당신 강아지!';
 						break;
 					case '김태희':
-						resultName = "김태희";
-						resultMessage = "여신급 미모인 당신 강아지. <br>  청순의 대명사인 김태희를 닮았어요"
+						resultName = '김태희';
+						resultMessage =
+							'여신급 미모인 당신 강아지. <br>  청순의 대명사인 김태희를 닮았어요';
 						break;
 					case '수지':
-						resultName = "수지";
-						resultMessage = "국민첫사랑 수지를 닮은 강아지. <br>  혹시 이성 강아지들에게 인기가 많은건 아닌지?"
+						resultName = '수지';
+						resultMessage =
+							'국민첫사랑 수지를 닮은 강아지. <br>  혹시 이성 강아지들에게 인기가 많은건 아닌지?';
 						break;
 					case '아이유':
-						resultName = "아이유";
-						resultMessage = "조그맣고 청순하고 귀여운 매력의 소유자 <br>  인기폭팔 누구에게나 사랑받는 강아지!"
+						resultName = '아이유';
+						resultMessage =
+							'조그맣고 청순하고 귀여운 매력의 소유자 <br>  인기폭팔 누구에게나 사랑받는 강아지!';
 						break;
 					case '양세형':
-						resultName = "양세형";
-						resultMessage = "혹시 당신 강아지는 어디로 튈지모르는 장난꾸러기? <br> 장난스러운 미소의 소유자!"
+						resultName = '양세형';
+						resultMessage =
+							'혹시 당신 강아지는 어디로 튈지모르는 장난꾸러기? <br> 장난스러운 미소의 소유자!';
 						break;
 					case '유재석':
-						resultName = "유재석";
-						resultMessage = "안경만 쓰면 유재석 판박이?! <br>  강아지 세계에서 어딜가나 국민MC로 활동할 강아지!"
+						resultName = '유재석';
+						resultMessage =
+							'안경만 쓰면 유재석 판박이?! <br>  강아지 세계에서 어딜가나 국민MC로 활동할 강아지!';
 						break;
 					case '전현무':
-						resultName = "전현무";
-						resultMessage = "특유의 볼살과 미소가 정말 귀여운 당신 강아지 <br>  혹시몰라요 어딘가에 mc의 피가 흐르고 있을지!"
+						resultName = '전현무';
+						resultMessage =
+							'특유의 볼살과 미소가 정말 귀여운 당신 강아지 <br>  혹시몰라요 어딘가에 mc의 피가 흐르고 있을지!';
 						break;
 					case '한지민':
-						resultName = "한지민";
-						resultMessage = "너무나도 사랑스러운 미소 <br>  웃는상인 당신 강아지는 한지민을 닮았네요!"
+						resultName = '한지민';
+						resultMessage =
+							'너무나도 사랑스러운 미소 <br>  웃는상인 당신 강아지는 한지민을 닮았네요!';
 						break;
 					case '박보영':
-						resultName = "박보영";
-						resultMessage = "동글동글 뭐든게 다 동그란 강아지 <br>  눈도 동글 코도 동글 얼굴도 동글~"
+						resultName = '박보영';
+						resultMessage =
+							'동글동글 뭐든게 다 동그란 강아지 <br>  눈도 동글 코도 동글 얼굴도 동글~';
 						break;
 					case '백일섭':
-						resultName = "백일섭";
-						resultMessage = "백일섭아저씨의 푸근한 미소를 닮았어요 <br> 동글동글 귀여운 당신 강아지!"
+						resultName = '백일섭';
+						resultMessage =
+							'백일섭아저씨의 푸근한 미소를 닮았어요 <br> 동글동글 귀여운 당신 강아지!';
 						break;
 					case '피오':
-						resultName = "피오";
-						resultMessage = "연예계 대표 강아지상 피오를 닮았죠 <br> 순둥한 외모로 모두를 사로잡는 귀여운 강아지!"
+						resultName = '피오';
+						resultMessage =
+							'연예계 대표 강아지상 피오를 닮았죠 <br> 순둥한 외모로 모두를 사로잡는 귀여운 강아지!';
 						break;
 					case '전지현':
-						resultName = "전지현";
-						resultMessage = "차가운 도시의 댕댕이인 당신 강아지? <br> 세련된 미모가 전지현을 닮았어요"
+						resultName = '전지현';
+						resultMessage =
+							'차가운 도시의 댕댕이인 당신 강아지? <br> 세련된 미모가 전지현을 닮았어요';
 						break;
 					case '강균성':
-						resultName = "강균성";
-						resultMessage = "예쁜 커다란 눈망울의 당신 강아지 <br> 동글동글한 눈이 참 이뻐요!"
+						resultName = '강균성';
+						resultMessage =
+							'예쁜 커다란 눈망울의 당신 강아지 <br> 동글동글한 눈이 참 이뻐요!';
 						break;
 				}
 				var hightest = prediction[0].className;
@@ -327,13 +368,14 @@
 				$('#celeb-image').attr('src', resultImage);
 				$('.loading').hide();
 				for (let i = 0; i < 5; i++) {
-					const classPrediction = prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+					const classPrediction =
+						prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
 					//labelContainer.childNodes[i].innerHTML = classPrediction;
-					var width = prediction[i].probability.toFixed(2)*100
-					$('#progressbar'+i).attr('style', "width:"+width+"%;");
-					$('#progressbar'+i).attr('aria-valuenow', width);
-					$('#progressbar'+i).html(width+"%");
-					$('#progressbar'+i+"-name").html(prediction[i].className);
+					var width = prediction[i].probability.toFixed(2) * 100;
+					$('#progressbar' + i).attr('style', 'width:' + width + '%;');
+					$('#progressbar' + i).attr('aria-valuenow', width);
+					$('#progressbar' + i).html(width + '%');
+					$('#progressbar' + i + '-name').html(prediction[i].className);
 				}
 			}
 		</script>
