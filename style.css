@@ -6,6 +6,10 @@ body {
   font-size: 23px;
 }
 
+.min-width-400 {
+	min-width: 400px
+}
+
 .title {
 	font-weight: bold;
 	font-size: 23px;
@@ -16,7 +20,7 @@ body {
   background-color: #fce2a9;
   margin: 0 auto;
   padding: 20px;
-  max-width: 80%;
+  max-width: 40%;
   border-radius: 25px;
   margin-top: 5%;
 }
@@ -121,7 +125,7 @@ body {
 }
 
 .main-image{
-	width: 90%;
+	width: 40%;
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
