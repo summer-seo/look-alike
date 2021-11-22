@@ -1,397 +1,143 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics  -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186714669-1"></script>
-		<script data-ad-client="ca-pub-8072806567798539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-			gtag('js', new Date());
-			gtag('config', 'UA-186714669-1');
-		</script>
 
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-			crossorigin="anonymous"
-		/>
-		<!-- font -->
-		<link rel="preconnect" href="https://fonts.gstatic.com" />
-		<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
-		<!-- Style Sheet -->
-		<link rel="stylesheet" href="style.css" />
-		<!-- Go to www.addthis.com/dashboard to customize your tools -->
-		<script
-			type="text/javascript"
-			src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fed28bf89552eb3"
-		></script>
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
-		<meta name="naver-site-verification" content="625df03217df9f7de01e8bdac320a82f9afe32d9" />
-		<title>강아지 닮은꼴 찾기</title>
-	</head>
-	<body>
-		<script
-			class="jsbin"
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-		></script>
-		<img class="main-image min-width-350" src="main-image.png" />
-		<div class="title">
-			당신의 강아지와 가장 닮은 연예인은?
-		</div>
-		<div class="file-upload min-width-350">
-			<div class="image-upload-wrap">
-				<input
-					class="file-upload-input"
-					type="file"
-					onchange="readURL(this);"
-					accept="image/*"
-				/>
-				<div class="drag-text fw-light">
-					<img class="upload-image" src="upload.png" />
-					<p class="pd-3 font-20">
-						강아지 얼굴 정면이 크고 잘 나온 사진을 올려주세요
-					</p>
-				</div>
-			</div>
-			<div class="file-upload-content">
-				<img class="file-upload-image" id="dog-image" src="#" alt="your image" />
-				<p class="result-name" id="result-name"></p>
-				<p class="result-message" id="result-message"></p>
-				<div id="label-container"></div>
-				<div class="loading">
-					<div class="spinner-border text-primary" role="status"></div>
-					<p>인공지능이 닮은 연예인을 분석중입니다</p>
-				</div>
-				<div class="progressbar-total">
-					<div class="progress">
-						<div class="name" id="progressbar0-name"></div>
-						<div
-							class="progress-bar bg-success"
-							id="progressbar0"
-							role="progressbar"
-							aria-valuemin="0"
-							aria-valuemax="100"
-						></div>
-					</div>
-					<div class="progress">
-						<div class="name" id="progressbar1-name"></div>
-						<div
-							class="progressbar2 progress-bar bg-info"
-							id="progressbar1"
-							role="progressbar"
-							aria-valuemin="0"
-							aria-valuemax="100"
-						></div>
-					</div>
-					<div class="progress">
-						<div class="name" id="progressbar2-name"></div>
-						<div
-							class="progressbar3 progress-bar bg-warning"
-							id="progressbar2"
-							role="progressbar"
-							aria-valuemin="0"
-							aria-valuemax="100"
-						></div>
-					</div>
-					<div class="progress">
-						<div class="name" id="progressbar3-name"></div>
-						<div
-							class="progressbar4 progress-bar bg-danger"
-							id="progressbar3"
-							role="progressbar"
-							aria-valuemin="0"
-							aria-valuemax="100"
-						></div>
-					</div>
-					<div class="progress">
-						<div class="name" id="progressbar4-name"></div>
-						<div
-							class="progressbar5 progress-bar bg-secondary"
-							id="progressbar4"
-							role="progressbar"
-							aria-valuemin="0"
-							aria-valuemax="100"
-						></div>
-					</div>
-				</div>
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics  -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-186714669-1"></script>
+	<script data-ad-client="ca-pub-8072806567798539" async
+		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-186714669-1');
+	</script>
 
-				<div class="image-title-wrap">
-					<button
-						type="button"
-						onclick="removeUpload()"
-						class="btn btn-success remove-image"
-					>
-						다른사진으로 테스트
-					</button>
-				</div>
-				<div class="addthis_inline_share_toolbox_x0rn share-buttons"></div>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png" />
+	<meta name="naver-site-verification" content="625df03217df9f7de01e8bdac320a82f9afe32d9" />
+
+	<title>강아지 닮은꼴 찾기</title>
+</head>
+
+<body>
+	<img class="main-image min-width-350" src="/img/main-image.png" />
+	<div class="title">
+		당신의 강아지와 가장 닮은 연예인은?
+	</div>
+	<div class="file-upload min-width-350">
+		<div class="image-upload-wrap">
+			<input class="file-upload-input" type="file" onchange="readURL(this);" accept="image/*" />
+			<div class="drag-text fw-light">
+				<img class="upload-image" src="/img/upload.png" />
+				<p class="pd-3 font-20">
+					강아지 얼굴 정면이 크고 잘 나온 사진을 올려주세요
+				</p>
 			</div>
 		</div>
-		<p class="align-center mg-top-5 font-15">
-			업로드한 사진은 분석에만 이용되며 어디에도 저장되지 않습니다. <br />안심하고 귀여운
-			강아지 사진 올려주세요.☺
-		</p>
-		<p class="align-center font-15 color-grey">
-			© Kaila Kim & Summer Seo 2021. Illustration by Taeyoung Kim. All Rights Reserved.
-		</p>
-		<p class="align-center font-15">
-			<a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">
-				제작 도움 by 조코딩 유투브 채널</a
-			>
-		</p>
-		<div class="ad-banner">
-			<ins
-				class="kakao_ad_area"
-				style="display: none;"
-				data-ad-unit="DAN-OdaO0iNGBXbJrsjx"
-				data-ad-width="320"
-				data-ad-height="100"
-			></ins>
-			<script
-				type="text/javascript"
-				src="//t1.daumcdn.net/kas/static/ba.min.js"
-				async
-			></script>
+		<div class="file-upload-content">
+			<img class="file-upload-image" id="dog-image" src="#" alt="your image" />
+			<p class="result-name" id="result-name"></p>
+			<p class="result-message" id="result-message"></p>
+			<div id="label-container"></div>
+			<div class="loading">
+				<div class="spinner-border text-primary" role="status"></div>
+				<p>인공지능이 닮은 연예인을 분석중입니다</p>
+			</div>
+			<div class="progressbar-total">
+				<div class="progress">
+					<div class="name" id="progressbar0-name"></div>
+					<div class="progress-bar bg-success" id="progressbar0" role="progressbar" aria-valuemin="0"
+						aria-valuemax="100"></div>
+				</div>
+				<div class="progress">
+					<div class="name" id="progressbar1-name"></div>
+					<div class="progressbar2 progress-bar bg-info" id="progressbar1" role="progressbar"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div class="progress">
+					<div class="name" id="progressbar2-name"></div>
+					<div class="progressbar3 progress-bar bg-warning" id="progressbar2" role="progressbar"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div class="progress">
+					<div class="name" id="progressbar3-name"></div>
+					<div class="progressbar4 progress-bar bg-danger" id="progressbar3" role="progressbar"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div class="progress">
+					<div class="name" id="progressbar4-name"></div>
+					<div class="progressbar5 progress-bar bg-secondary" id="progressbar4" role="progressbar"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+			</div>
+
+			<div class="image-title-wrap">
+				<button type="button" onclick="removeUpload()" class="btn btn-success remove-image">
+					다른사진으로 테스트
+				</button>
+			</div>
+			<div class="addthis_inline_share_toolbox_x0rn share-buttons"></div>
 		</div>
-		<div class="ad-banner2">
-			<ins
-				class="kakao_ad_area"
-				style="display: none;"
-				data-ad-unit="DAN-9ptxRFrKCyvh17MA"
-				data-ad-width="320"
-				data-ad-height="100"
-			></ins>
-			<script
-				type="text/javascript"
-				src="//t1.daumcdn.net/kas/static/ba.min.js"
-				async
-			></script>
-		</div>
-		<div id="disqus_thread"></div>
-		<script>
-			/**
-			 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-			 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-			/*
-    var disqus_config = function () {
-    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    };
-    */
-			(function () {
-				// DON'T EDIT BELOW THIS LINE
-				var d = document,
-					s = d.createElement('script');
-				s.src = 'https://dogtoface.disqus.com/embed.js';
-				s.setAttribute('data-timestamp', +new Date());
-				(d.head || d.body).appendChild(s);
-			})();
-		</script>
-		<!-- <noscript
-			>Please enable JavaScript to view the
-			<a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript
-		> -->
-		<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-			crossorigin="anonymous"
-		></script>
+	</div>
+	<p class="align-center mg-top-5 font-15">
+		업로드한 사진은 분석에만 이용되며 어디에도 저장되지 않습니다. <br />안심하고 귀여운
+		강아지 사진 올려주세요.☺
+	</p>
+	<p class="align-center font-15 color-grey">
+		© Kaila Kim & Summer Seo 2021. Illustration by Taeyoung Kim. All Rights Reserved.
+	</p>
+	<p class="align-center font-15">
+		<a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">
+			제작 도움 by 조코딩 유투브 채널</a>
+	</p>
 
-		<script>
-			function readURL(input) {
-				if (input.files && input.files[0]) {
-					var reader = new FileReader();
-					reader.onload = function (e) {
-						$('.image-upload-wrap').hide();
+	<!-- Kakao Ads (Revenue) -->
+	<div class="ad-banner">
+		<ins class="kakao_ad_area" style="display: none;" data-ad-unit="DAN-OdaO0iNGBXbJrsjx" data-ad-width="320"
+			data-ad-height="100"></ins>
+		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+	</div>
+	<div class="ad-banner2">
+		<ins class="kakao_ad_area" style="display: none;" data-ad-unit="DAN-9ptxRFrKCyvh17MA" data-ad-width="320"
+			data-ad-height="100"></ins>
+		<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+	</div>
+	<div id="disqus_thread"></div>
 
-						$('.file-upload-image').attr('src', e.target.result);
-						$('.file-upload-content').show();
+	<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<!-- Disqus - comment hosting service  -->
+	<script>
+		(function () {
+			var d = document,
+				s = d.createElement('script');
+			s.src = 'https://dogtoface.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		})();
 
-						$('.image-title').html(input.files[0].name);
-					};
-					reader.readAsDataURL(input.files[0]);
-					init().then(function () {
-						predict();
-					});
-				} else {
-					removeUpload();
-				}
-			}
+	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+	<script type="text/javascript" src="mlmodel.js"></script>
+	<!-- Addthis: social bookmarking service  -->
+	<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5fed28bf89552eb3"></script>
 
-			function removeUpload() {
-				$('#celeb-image').attr('src', 'anonymous-image.png');
-				$('.file-upload-input').replaceWith($('.file-upload-input').clone());
-				$('.file-upload-content').hide();
-				$('.image-upload-wrap').show();
-			}
-			$('.image-upload-wrap').bind('dragover', function () {
-				$('.image-upload-wrap').addClass('image-dropping');
-			});
-			$('.image-upload-wrap').bind('dragleave', function () {
-				$('.image-upload-wrap').removeClass('image-dropping');
-			});
-		</script>
-
-		<!-- Trained Model created in Teachable Machine -->
-		<script type="text/javascript">
-			/* More API functions here:
-			 https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image */
-
-			// the link to your model provided by Teachable Machine export panel
-			const URL = "https://teachablemachine.withgoogle.com/models/8_-qRJUd2/";
-
-			let model, webcam, maxPredictions;
-
-			// Load the image model and setup the webcam
-			async function init() {
-				const modelURL = URL + 'model.json';
-				const metadataURL = URL + 'metadata.json';
-
-				// load the model and metadata
-				// Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-				// or files from your local hard drive
-				// Note: the pose library adds "tmImage" object to your window (window.tmImage)
-				model = await tmImage.load(modelURL, metadataURL);
-				maxPredictions = model.getTotalClasses();
-			}
-
-			// run the webcam image through the image model
-			async function predict() {
-				$('.loading').show();
-				// predict can take in an image, video or canvas html element
-				var image = document.getElementById('dog-image');
-
-				const prediction = await model.predict(image, false);
-				prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-				var resultName = '';
-				var resultMessage = '';
-				switch (prediction[0].className) {
-					case '강호동':
-						resultName = '강호동';
-						resultMessage =
-							'포동포동 사랑스러운 강아지 <br> 정말 든든한 당신의 반려견!';
-						break;
-					case '규현':
-						resultName = '규현';
-						resultMessage =
-							'당신의 강아지는 땡그란 눈의 소유자 <br> 혹시 짖을때 감미로운 보컬을 뽐내지 않나요?';
-						break;
-					case '원빈':
-						resultName = '원빈';
-						resultMessage =
-							'남신급 외모를 갖춘 강아지군요! <br> 혹시 원빈이 강아지로 환생한거 아닌지..?';
-						break;
-					case '박보검':
-						resultName = '박보검';
-						resultMessage =
-							'보기만해도 훈훈해지는 강아지 <br> 어디든지 나가면 모두에게 인기폭팔!';
-						break;
-					case '백종원':
-						resultName = '백종원';
-						resultMessage =
-							'기분좋은 미소의 소유자군요! <br>  백종원 닮은 강아지 참 쉽쥬~?';
-						break;
-					case '서장훈':
-						resultName = '서장훈';
-						resultMessage =
-							'서장훈의 쳐진 눈을 닮았어요.  <br> 혹시 당신 강아지는 미래의 건물주?!';
-						break;
-					case '김태희':
-						resultName = '김태희';
-						resultMessage =
-							'여신급 미모인 당신 강아지. <br>  청순의 대명사인 김태희를 닮았어요';
-						break;
-					case '수지':
-						resultName = '수지';
-						resultMessage =
-							'국민첫사랑 수지를 닮은 강아지. <br>  혹시 이성 강아지들에게 인기가 많은건 아닌지?';
-						break;
-					case '아이유':
-						resultName = '아이유';
-						resultMessage =
-							'조그맣고 청순하고 귀여운 매력의 소유자 <br>  인기폭팔 누구에게나 사랑받는 강아지!';
-						break;
-					case '양세형':
-						resultName = '양세형';
-						resultMessage =
-							'혹시 당신 강아지는 어디로 튈지모르는 장난꾸러기? <br> 장난스러운 미소의 소유자!';
-						break;
-					case '유재석':
-						resultName = '유재석';
-						resultMessage =
-							'안경만 쓰면 유재석 판박이?! <br>  강아지 세계에서 어딜가나 국민MC로 활동할 강아지!';
-						break;
-					case '전현무':
-						resultName = '전현무';
-						resultMessage =
-							'특유의 볼살과 미소가 정말 귀여운 당신 강아지 <br>  혹시몰라요 어딘가에 mc의 피가 흐르고 있을지!';
-						break;
-					case '한지민':
-						resultName = '한지민';
-						resultMessage =
-							'너무나도 사랑스러운 미소 <br>  웃는상인 당신 강아지는 한지민을 닮았네요!';
-						break;
-					case '박보영':
-						resultName = '박보영';
-						resultMessage =
-							'동글동글 뭐든게 다 동그란 강아지 <br>  눈도 동글 코도 동글 얼굴도 동글~';
-						break;
-					case '백일섭':
-						resultName = '백일섭';
-						resultMessage =
-							'백일섭 할아버지의 푸근한 미소를 닮았어요 <br> 동글동글 귀여운 당신 강아지!';
-						break;
-					case '피오':
-						resultName = '피오';
-						resultMessage =
-							'연예계 대표 강아지상 피오를 닮았죠 <br> 순둥한 외모로 모두를 사로잡는 귀여운 강아지!';
-						break;
-					case '전지현':
-						resultName = '전지현';
-						resultMessage =
-							'차가운 도시의 댕댕이인 당신 강아지? <br> 세련된 미모가 전지현을 닮았어요';
-						break;
-					case '강균성':
-						resultName = '강균성';
-						resultMessage =
-							'예쁜 커다란 눈망울의 당신 강아지 <br> 동글동글한 눈이 참 이뻐요!';
-						break;
-				}
-				var hightest = prediction[0].className;
-				var resultImage;
-				$('.result-name').html(resultName);
-				$('.result-message').html(resultMessage);
-				$('#celeb-image').attr('src', resultImage);
-				$('.loading').hide();
-				for (let i = 0; i < 5; i++) {
-					const classPrediction =
-						prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
-					//labelContainer.childNodes[i].innerHTML = classPrediction;
-					var width = prediction[i].probability.toFixed(2) * 100;
-					$('#progressbar' + i).attr('style', 'width:' + width + '%;');
-					$('#progressbar' + i).attr('aria-valuenow', width);
-					$('#progressbar' + i).html(width + '%');
-					$('#progressbar' + i + '-name').html(prediction[i].className);
-				}
-			}
-		</script>
-	</body>
 	<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
-
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  -->
+
 </html>
